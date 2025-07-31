@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Language Models & GitHub Copilot Best Practices</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation Controls -->
+        <div class="nav-controls">
+            <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn nav-next" id="nextBtn" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="slide-counter" id="slideCounter">1 / 15</div>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-wrapper">
+            <!-- Slide 1: Title -->
+            <div class="slide active" data-slide="1">
+                <div class="slide-content title-slide">
+                    <div class="title-icon">🤖</div>
+                    <h1>AI Language Models & GitHub Copilot</h1>
+                    <h2>Best Practices for Effective Use</h2>
+                    <div class="subtitle">GPT-4.1, GPT-4o, Claude Sonnet & Advanced GitHub Copilot</div>
+                    <div class="company-badge">COMPANY</div>
+                    <div class="tagline">Innovation through Intelligent Development</div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Advanced Features & Configuration -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h1>Advanced Features & Configuration</h1>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <h3>Prompt Files</h3>
+                            <p>*.prompt.md files in .github/prompts/</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚙️</div>
+                            <h3>Instructions</h3>
+                            <p>.github/copilot-instructions.md</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔧</div>
+                            <h3>Tool Sets</h3>
+                            <p>github, mermaid, filesystem</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Modes</h3>
+                            <p>Ask, Edit, Agent, Custom</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔌</div>
+                            <h3>MCP Servers</h3>
+                            <p>Model Context Protocol integrations</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <h4>Example: .github/copilot-instructions.md</h4>
+                        <pre><code># Coding Standards
+- Use TypeScript for all new JavaScript code
+- Follow Prettier formatting rules
+- Always include JSDoc comments for public methods</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Context Management -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h1>Context Management</h1>
+                    <div class="context-section">
+                        <div class="context-method">
+                            <h3>Hash Variables (#)</h3>
+                            <div class="variable-list">
+                                <span class="variable">#codebase</span>
+                                <span class="variable">#changes</span>
+                                <span class="variable">#problems</span>
+                                <span class="variable">#runCommands</span>
+                                <span class="variable">#search</span>
+                                <span class="variable">#terminalResults</span>
+                            </div>
+                        </div>
+                        <div class="context-method">
+                            <h3>At Commands (@)</h3>
+                            <p>@add Context method for attaching files, terminal outputs, and error messages</p>
+                        </div>
+                        <div class="context-method">
+                            <h3>Integrations</h3>
+                            <ul>
+                                <li>Terminal logs integration</li>
+                                <li>Git context usage</li>
+                                <li>Symbol references</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Implementation Best Practices -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h1>Implementation Best Practices</h1>
+                    <div class="best-practices-grid">
+                        <div class="practice-card">
+                            <div class="practice-icon">🎭</div>
+                            <h3>Role-based Prompting</h3>
+                            <p>"Act as a senior software architect"</p>
+                            <div class="example">Example: Define specific roles for AI to assume</div>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">📋</div>
+                            <h3>4 S's Framework</h3>
+                            <div class="four-s">
+                                <span>Specific</span>
+                                <span>Structured</span>
+                                <span>Sequential</span>
+                                <span>Supported</span>
+                            </div>
+                        </div>
+                        <div class="practice-card full-width">
+                            <div class="practice-icon">🎯</div>
+                            <h3>Context Importance</h3>
+                            <p>Proper context leads to better results. Always review AI output and test thoroughly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Different Types of Modes -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h1>Different Types of Modes</h1>
+                    <div class="modes-grid">
+                        <div class="mode-card">
+                            <div class="mode-icon">💬</div>
+                            <h3>Ask Mode</h3>
+                            <p>Question and answer format for interactive queries</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">🤖</div>
+                            <h3>Agent Mode</h3>
+                            <p>Autonomous multi-step workflows with plan-edit-run-verify loop</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">✏️</div>
+                            <h3>Edit Mode</h3>
+                            <p>Direct code modifications and refactoring assistance</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">⚙️</div>
+                            <h3>Custom Modes</h3>
+                            <p>Specialized behaviors for specific development workflows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Prompt Files vs Instructions vs Modes -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h1>Prompt Files vs Instructions vs Modes</h1>
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="header-cell">Asset</div>
+                            <div class="header-cell">Scope</div>
+                            <div class="header-cell">Purpose</div>
+                            <div class="header-cell">File Pattern</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="cell"><strong>Prompt Files</strong></div>
+                            <div class="cell">Reusable templates</div>
+                            <div class="cell">Specific task automation</div>
+                            <div class="cell"><code>*.prompt.md</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="cell"><strong>Instructions</strong></div>
+                            <div class="cell">Repository-wide</div>
+                            <div class="cell">Global guidance & standards</div>
+                            <div class="cell"><code>copilot-instructions.md</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="cell"><strong>Modes</strong></div>
+                            <div class="cell">Session-specific</div>
+                            <div class="cell">Specialized behavior</div>
+                            <div class="cell">Configuration-based</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Slash Commands -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h1>Slash Commands</h1>
+                    <div class="commands-grid">
+                        <div class="command-card">
+                            <div class="command-name">/fix</div>
+                            <div class="command-desc">Suggest fixes for errors</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name">/tests</div>
+                            <div class="command-desc">Generate unit tests</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name">/explain</div>
+                            <div class="command-desc">Explain code functionality</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name">/codereview</div>
+                            <div class="command-desc">Review code quality</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name">/list</div>
+                            <div class="command-desc">List available options</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name">/doc</div>
+                            <div class="command-desc">Generate documentation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Custom Tools & Extensions -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h1>Custom Tools & Extensions</h1>
+                    <div class="tools-content">
+                        <div class="tool-section">
+                            <h3>What are Copilot Tools?</h3>
+                            <p>Extensions that enhance GitHub Copilot's capabilities with specialized functionality</p>
+                        </div>
+                        <div class="tool-section">
+                            <h3>Mermaid Chart Example</h3>
+                            <p>Generate architecture diagrams directly from code structure</p>
+                        </div>
+                        <div class="code-example">
+                            <h4>MCP Configuration Example</h4>
+                            <pre><code>{
+  "servers": {
+    "github": {
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "mermaid": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-mermaid"]
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Code Completion Demo -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <h1>Code Completion Demo</h1>
+                    <div class="demo-section">
+                        <h3>Comment-Driven Development</h3>
+                        <div class="code-example">
+                            <pre><code>// Build a REST API handler for user authentication
+// Should validate email/password, return JWT token
+// Include rate limiting and input validation
+
+function authenticateUser(req, res) {
+    // Copilot will suggest complete implementation
+}</code></pre>
+                        </div>
+                        <div class="demo-tips">
+                            <div class="tip">💡 Use descriptive comments for better suggestions</div>
+                            <div class="tip">💡 Include type information in TypeScript</div>
+                            <div class="tip">💡 Reference existing patterns in codebase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Unit Test Generation Demo -->
+            <div class="slide" data-slide="10">
+                <div class="slide-content">
+                    <h1>Unit Test Generation Demo</h1>
+                    <div class="demo-section">
+                        <h3>Using /tests Command</h3>
+                        <div class="code-example">
+                            <pre><code>/tests Generate comprehensive unit tests for #file:payment-processor.ts
+
+Include:
+- Happy path scenarios
+- Edge cases and error conditions  
+- Mock external dependencies
+- Async operation testing
+- Input validation tests</code></pre>
+                        </div>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <strong>Context-Aware:</strong> Uses existing test patterns
+                            </div>
+                            <div class="feature-item">
+                                <strong>Framework Support:</strong> Jest, Mocha, Vitest, etc.
+                            </div>
+                            <div class="feature-item">
+                                <strong>Mock Generation:</strong> Automatic mock creation
+                            </div>
+                            <div class="feature-item">
+                                <strong>Coverage Focus:</strong> Ensures comprehensive testing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Bug Fixing & Debugging Demo -->
+            <div class="slide" data-slide="11">
+                <div class="slide-content">
+                    <h1>Bug Fixing & Debugging Demo</h1>
+                    <div class="demo-section">
+                        <h3>Agent Mode for API Debugging</h3>
+                        <div class="scenario">
+                            <p><strong>Scenario:</strong> API endpoint returning 500 errors</p>
+                        </div>
+                        <div class="code-example">
+                            <pre><code>Agent mode: Debug this API issue using #terminalResults
+
+Terminal output shows:
+curl -X POST https://api.company.com/users \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@company.com","name":"Test User"}'
+
+Response: 500 Internal Server Error</code></pre>
+                        </div>
+                        <div class="benefits-list">
+                            <div class="benefit">🔍 Autonomous investigation</div>
+                            <div class="benefit">📋 Context integration</div>
+                            <div class="benefit">🧪 End-to-end testing</div>
+                            <div class="benefit">🔄 Iterative fixing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Project Architecture Demo -->
+            <div class="slide" data-slide="12">
+                <div class="slide-content">
+                    <h1>Project Architecture Demo</h1>
+                    <div class="demo-section">
+                        <div class="demo-step">
+                            <h3>1. Generate Mermaid Chart</h3>
+                            <div class="code-example">
+                                <pre><code>Use @mermaid-chart tool to create architecture diagram for:
+- #folder:src/services
+- #folder:src/controllers  
+- #folder:src/models
+
+Show relationships, dependencies, and data flow</code></pre>
+                            </div>
+                        </div>
+                        <div class="benefits-grid">
+                            <div class="benefit">📊 Visual architecture representation</div>
+                            <div class="benefit">📝 Automatically updated documentation</div>
+                            <div class="benefit">🔄 Consistent formatting and structure</div>
+                            <div class="benefit">⚡ Rapid project onboarding</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Real-World Implementation -->
+            <div class="slide" data-slide="13">
+                <div class="slide-content">
+                    <h1>Real-World Implementation Examples</h1>
+                    <div class="implementation-grid">
+                        <div class="impl-card">
+                            <div class="impl-icon">🌐</div>
+                            <h3>Backend Endpoint Discovery</h3>
+                            <p>Using cURL commands to test and validate API endpoints</p>
+                        </div>
+                        <div class="impl-card">
+                            <div class="impl-icon">🏗️</div>
+                            <h3>Project Setup Automation</h3>
+                            <p>Automated scaffolding and configuration setup</p>
+                        </div>
+                        <div class="impl-card">
+                            <div class="impl-icon">💻</div>
+                            <h3>Terminal Integration</h3>
+                            <p>Leveraging terminal logs and command history</p>
+                        </div>
+                        <div class="impl-card">
+                            <div class="impl-icon">📁</div>
+                            <h3>Multi-file Editing</h3>
+                            <p>Coordinated changes across multiple files</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Best Practices Summary -->
+            <div class="slide" data-slide="14">
+                <div class="slide-content">
+                    <h1>Best Practices Summary</h1>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <h3>Context Management</h3>
+                            <ul>
+                                <li>Use # variables effectively</li>
+                                <li>Include terminal logs for debugging</li>
+                                <li>Reference related code files</li>
+                            </ul>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Prompt Engineering</h3>
+                            <ul>
+                                <li>Follow the 4 S's framework</li>
+                                <li>Use role-based prompting</li>
+                                <li>Break complex tasks into steps</li>
+                            </ul>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Output Validation</h3>
+                            <ul>
+                                <li>Always review generated code</li>
+                                <li>Test functionality thoroughly</li>
+                                <li>Verify security implications</li>
+                            </ul>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Tool Integration</h3>
+                            <ul>
+                                <li>Leverage MCP servers</li>
+                                <li>Use appropriate modes</li>
+                                <li>Optimize for performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Contact & Resources -->
+            <div class="slide" data-slide="15">
+                <div class="slide-content final-slide">
+                    <div class="final-icon">🏢</div>
+                    <h1>Thank You</h1>
+                    <h2>Questions & Discussion</h2>
+                    <div class="contact-section">
+                        <h3>For more information and support:</h3>
+                        <ul>
+                            <li>Internal AI/ML Team</li>
+                            <li>GitHub Copilot Documentation</li>
+                            <li>COMPANY Developer Portal</li>
+                        </ul>
+                    </div>
+                    <div class="company-branding">
+                        <div class="company-name">COMPANY</div>
+                        <div class="company-tagline">Innovation through Intelligent Development</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
